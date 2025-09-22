@@ -8,5 +8,6 @@ namespace TP2_Prog3
 {
     internal class Parc
     {
+        /** Utilisation d'une linked list**/
     }
 }

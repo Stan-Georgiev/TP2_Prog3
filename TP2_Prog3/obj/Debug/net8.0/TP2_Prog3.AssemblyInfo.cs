@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP2_Prog3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00e4c54333ea5f4ecea12c7c556853482cdb556a")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP2_Prog3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP2_Prog3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
