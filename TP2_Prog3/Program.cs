@@ -4,7 +4,7 @@
     {
         private static readonly Parc Parc = new();
         private static readonly Map Map = new(20,20);
-        private static readonly GestionUtilisateur GestionVisiteurs = new(Parc);
+        private static readonly GestionVisiteur GestionVisiteurs = new(Parc);
         private static void Afficher()
         {
             Thread.Sleep(1000);
