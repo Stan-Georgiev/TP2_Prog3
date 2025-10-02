@@ -1,4 +1,6 @@
-﻿namespace TP2_Prog3
+﻿using TP2_Prog3.Util;
+
+namespace TP2_Prog3
 {
     public static class Program
     {
