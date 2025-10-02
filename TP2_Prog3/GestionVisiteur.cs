@@ -14,7 +14,7 @@ namespace TP2_Prog3
             
         }
 
-        public void EntrerVisiteurDansFileAttente(string attractionId, Visiteur visiteur)
+        public void EntrerVisiteurDansFilAttente(string attractionId, Visiteur visiteur)
         {
 
         }
