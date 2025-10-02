@@ -13,7 +13,10 @@ namespace TP2_Prog3
         Attraction m1 = new Attraction("M0001", 0,"Manège 1",4);
 
         public void ajouterAttraction(Attraction a) {
-            Park­.AddFirst(a);
+            Park.AddFirst(a);
         }
+
+        public LinkedList<Attraction> GetAttractions() => Park;
     }
+    
 }

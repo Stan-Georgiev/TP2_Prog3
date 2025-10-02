@@ -8,5 +8,10 @@ namespace TP2_Prog3
 {
     internal class GestionUtilisateur
     {
+
+        public GestionUtilisateur(Parc parc)
+        {
+            
+        }
     }
 }
