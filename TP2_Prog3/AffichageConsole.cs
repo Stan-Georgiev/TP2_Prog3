@@ -24,8 +24,13 @@ namespace TP2_Prog3
                     builder.Append(map.map[i]);
                 }
             }
-           
+          
             Console.WriteLine($"{visiteurs.GetNbVisiteur()}visiteurs(s) présent(s) dans le parc.");
+
+            foreach(Attraction i in parc.GetAttractions())
+            {
+                Console.WriteLine("");
+            }
         }
 
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
