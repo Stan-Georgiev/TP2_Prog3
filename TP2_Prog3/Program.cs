@@ -6,7 +6,7 @@ namespace TP2_Prog3
     {
         private static readonly Parc Parc = new();
         private static readonly Map Map = new(20,20);
-        private static readonly GestionUtilisateur GestionVisiteurs = new(Parc);
+        private static readonly GestionVisiteurs GestionVisiteurs = new(Parc);
         private static readonly List<string> ImportedMap = FileReader.ReadFile("map.txt");
         
         private static void Afficher()
