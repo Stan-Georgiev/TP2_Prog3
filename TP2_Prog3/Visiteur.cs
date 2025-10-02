@@ -21,6 +21,11 @@ namespace TP2_Prog3
             _historique.AddLast(action);
         }
 
+        public LinkedList<string> GetHistorique()
+        {
+            return _historique;
+        }
+
         public string GetNom()
         {
             return _nom;

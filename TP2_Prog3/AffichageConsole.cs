@@ -30,7 +30,11 @@ namespace TP2_Prog3
 
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
         {
-
+            Console.WriteLine($"### {visiteur} ###");
+            foreach(string i in visiteur.GetHistorique())
+            {
+                Console.WriteLine($"- {i}");
+            }
         }
 
     }
