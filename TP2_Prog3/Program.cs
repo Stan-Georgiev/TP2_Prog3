@@ -5,12 +5,12 @@ namespace TP2_Prog3
     public static class Program
     {
         private static readonly Parc Parc = new();
-        private static readonly Map Map = new(20,20);
+        private static readonly Map Map = new Map(20,20);
         private static readonly GestionVisiteur GestionVisiteurs = new(Parc);
-        private static readonly List<string> ImportedMap = FileReader.ReadFile("map.txt");
+  
         private static void Afficher()
         {
-            Map.GenerateMap(ImportedMap);
+            
             Thread.Sleep(1000);
             AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
         }
@@ -27,6 +27,8 @@ namespace TP2_Prog3
         }
         public static void Main()
         {
+    
+           
             AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
             var visiteur1 = new Visiteur("Nom 1");
             TestEntrerVisiteur(visiteur1);
@@ -45,7 +47,7 @@ namespace TP2_Prog3
             TestSortirVisiteur(visiteur4);
             TestSortirVisiteur(visiteur2);
             TestSortirVisiteur(visiteur1);
-            AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
+           AffichageConsole.AfficherHistoriqueVisiteur(visiteur1);
         }
     }
 }

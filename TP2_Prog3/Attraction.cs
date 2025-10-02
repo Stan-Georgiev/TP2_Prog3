@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TP2_Prog3
 {
-    internal class Attraction
+    public class Attraction
     {
         public enum TypeAttraction
         {
