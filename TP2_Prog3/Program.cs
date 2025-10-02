@@ -1,14 +1,11 @@
-﻿using TP2_Prog3.Util;
-
-namespace TP2_Prog3
+﻿namespace TP2_Prog3
 {
     public static class Program
     {
         private static readonly Parc Parc = new();
         private static readonly Map Map = new(20,20);
-        private static readonly GestionVisiteurs GestionVisiteurs = new(Parc);
+        private static readonly GestionVisiteur GestionVisiteurs = new(Parc);
         private static readonly List<string> ImportedMap = FileReader.ReadFile("map.txt");
-        
         private static void Afficher()
         {
             Map.GenerateMap(ImportedMap);

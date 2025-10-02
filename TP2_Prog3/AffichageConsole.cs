@@ -8,7 +8,7 @@ namespace TP2_Prog3
 {
     internal class AffichageConsole
     {
-        public static void Afficher(Parc parc, Map map, GestionUtilisateur visiteurs)
+        public static void Afficher(Parc parc, Map map, GestionVisiteur visiteurs)
         {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < map.GetHeigt(); i++)

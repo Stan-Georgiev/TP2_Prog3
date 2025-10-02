@@ -8,5 +8,22 @@ namespace TP2_Prog3
 {
     internal class Visiteur
     {
+        private string _nom;
+        private LinkedList<string> _historique = new LinkedList<string>();
+
+        public Visiteur(string nom)
+        {
+            this._nom = nom;
+        }
+
+        public void AjouterHistorique(string action)
+        {
+            _historique.AddLast(action);
+        }
+
+        public string GetNom()
+        {
+            return _nom;
+        }
     }
 }
