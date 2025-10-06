@@ -26,7 +26,7 @@ namespace TP2_Prog3
                 
             }
           
-            Console.WriteLine($"{visiteurs.GetNbVisiteur()}visiteurs(s) présent(s) dans le parc.");
+            Console.WriteLine($"{visiteurs.GetNbVisiteur()} visiteurs(s) présent(s) dans le parc.");
 
             foreach(Attraction i in parc.GetAttractions())
             {
