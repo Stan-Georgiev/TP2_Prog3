@@ -13,3 +13,18 @@ C:\Users\6298861\Desktop\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\refint\TP2_Prog3.d
 C:\Users\6298861\Desktop\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.pdb
 C:\Users\6298861\Desktop\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.genruntimeconfig.cache
 C:\Users\6298861\Desktop\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\ref\TP2_Prog3.dll
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.exe
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.deps.json
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.runtimeconfig.json
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.dll
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.pdb
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.AssemblyInfoInputs.cache
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.AssemblyInfo.cs
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.csproj.CoreCompileInputs.cache
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.sourcelink.json
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.dll
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\refint\TP2_Prog3.dll
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.pdb
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.genruntimeconfig.cache
+C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\ref\TP2_Prog3.dll
