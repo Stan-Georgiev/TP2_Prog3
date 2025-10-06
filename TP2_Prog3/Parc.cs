@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,15 @@ namespace TP2_Prog3
     public class Parc
     {
         /** Utilisation d'une linked list**/
-        LinkedList<Attraction> Park = new LinkedList<Attraction>();
+        //Hash//
+        HashSet<Attraction> attractions = new HashSet<Attraction>();
         Attraction m1 = new Attraction("M0001", 0,"Manège 1",4);
 
         public void ajouterAttraction(Attraction a) {
-            Park.AddFirst(a);
+            attractions.Add(a);
         }
 
-        public LinkedList<Attraction> GetAttractions() => Park;
+        public HashSet<Attraction> GetAttractions() => attractions;
     }
     
 }
