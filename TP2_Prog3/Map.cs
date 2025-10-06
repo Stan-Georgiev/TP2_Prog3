@@ -3,42 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP2_Prog3.Util;
 
 namespace TP2_Prog3
 {
-    internal class Map
+    public class Map
     {
-        private int heigt;
-        private int width;
-        public List<String> map;
+        private static string txtPath = Path.Combine(Environment.CurrentDirectory, "map.txt");
+        private static readonly List<string> ImportedMap = FileReader.ReadFile(txtPath);
+   
+        public List<String> map = new List<String>();
         public Map(int heigt, int width)
         {
-            this.heigt = heigt;
-            this.width = width;
+            GenerateMap();
         }
-
-        public void GenerateMap()
+        
+        private void GenerateMap()
         {
-            for (int i = 0; i < heigt; i++)
+            
+            for (int i = 0; i < ImportedMap.Count; i++)
             {
-                map.Add("");
-                for (int j = 0; j < width; j++)
-                {
-                    map.Add("");
-                }
+                map.Add(ImportedMap[i]);
+                
             }
         }
-        public void GenerateMap(List<string> importedMap)
-        {
-            
-        }
-
-        public void GenerateMap(Parc parc)
-        {
-            
-        }
-        public int GetHeigt()=>heigt;
-        public int GetWidth()=>width;
+        
         
     }
 }

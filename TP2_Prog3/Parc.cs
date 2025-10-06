@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TP2_Prog3
 {
-    internal class Parc
+    public class Parc
     {
         /** Utilisation d'une linked list**/
         //Hash//
