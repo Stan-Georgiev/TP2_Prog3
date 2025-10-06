@@ -8,7 +8,7 @@ namespace TP2_Prog3
 {
     internal class GestionVisiteur
     {
-        private int nbVisiteur;
+        private int _nbVisiteur;
         
         public GestionVisiteur(Parc parc)
         {
@@ -17,12 +17,12 @@ namespace TP2_Prog3
 
         public int GetNbVisiteur()
         {
-            return nbVisiteur;
+            return _nbVisiteur;
         }
 
         public void EntrerVisiteurDansFilAttente(string attractionId, Visiteur visiteur)
         {
-            visiteur.AjouterHistorique($"{visiteur.GetNom} rentre dans la file de l'attraction {attractionId}");
+            visiteur.AjouterHistorique($"{visiteur.GetNom} rentre dans la file de l\'attraction {attractionId}");
         }
 
         public void EntrerVisiteurDansAttraction(string attractionId)
@@ -32,13 +32,13 @@ namespace TP2_Prog3
 
         public void EntrerVisiteurDansParc(Visiteur visiteur)
         {
-            nbVisiteur++;
+            _nbVisiteur++;
             visiteur.AjouterHistorique($"{visiteur.GetNom} rentre dans le parc");
         }
 
         public void SortirVisiteurDuParc(Visiteur visiteur)
         {
-            nbVisiteur--;
+            _nbVisiteur--;
             visiteur.AjouterHistorique($"{visiteur.GetNom} sort du le parc");
         }
     }

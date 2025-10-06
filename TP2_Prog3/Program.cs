@@ -1,11 +1,10 @@
-﻿using TP2_Prog3.Util;
-
+﻿
 namespace TP2_Prog3
 {
     public static class Program
     {
         private static readonly Parc Parc = new();
-        private static readonly Map Map = new Map(20,20);
+        private static readonly Map Map = new Map();
         private static readonly GestionVisiteur GestionVisiteurs = new(Parc);
   
         private static void Afficher()
@@ -27,8 +26,7 @@ namespace TP2_Prog3
         }
         public static void Main()
         {
-    
-           
+            
             AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
             var visiteur1 = new Visiteur("Nom 1");
             TestEntrerVisiteur(visiteur1);
