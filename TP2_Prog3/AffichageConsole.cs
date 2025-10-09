@@ -78,6 +78,8 @@ namespace TP2_Prog3
 
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine($"### {visiteur} ###");
             foreach (string entry in visiteur.GetHistorique())
             {
