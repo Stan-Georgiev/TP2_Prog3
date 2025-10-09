@@ -1,35 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="AffichageConsole.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace TP2_Prog3
 {
-    internal class AffichageConsole
+    /// <summary>
+    /// Classe utilitaire responsable de l’affichage du parc et des visiteurs dans la console.
+    /// </summary>
+    internal static class AffichageConsole
     {
+        /// <summary>
+        /// Affiche la carte du parc, les attractions et le nombre de visiteurs présents.
+        /// Les attractions sont colorées en fonction de leur taux de remplissage  –
+        ///  Rouge foncé : complet
+        /// - Jaune foncé : plus de 75 % de remplissage
+        /// - Vert : disponible.
+        /// </summary>
+        /// <param name="parc">Le parc contenant les attractions.</param>
+        /// <param name="map">La carte du parc.</param>
+        /// <param name="visiteurs">Gestionnaire des visiteurs.</param>
         public static void Afficher(Parc parc, Map map, GestionVisiteur visiteurs)
         {
             HashSet<Attraction> attractions = parc.GetAttractions();
             Console.Clear();
 
-            for (int i = 0; i < map.MapLines.Count; i++)
+            foreach (var t in map.MapLines)
             {
-                for (int j = 0; j < map.MapLines[i].Count; j++)
+                foreach (var cell in t)
                 {
-                    string cell = map.MapLines[i][j].ToString();
-                    Attraction attraction = attractions.FirstOrDefault(a => a.GetId().ToString() == cell);
+                    var cell1 = cell;
+                    Attraction? attraction = attractions.FirstOrDefault(a => a.GetId().ToString() == cell1);
 
                     if (attraction != null)
                     {
                         double fillPercentage = (double)attraction.VisiteursEnligne.Count / attraction.GetCapacity() * 100;
 
                         if (fillPercentage >= 100)
+                        {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
+                        }
                         else if (fillPercentage >= 75)
+                        {
                             Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        }
                         else
+                        {
                             Console.ForegroundColor = ConsoleColor.Green;
+                        }
                     }
                     else
                     {
@@ -38,8 +55,10 @@ namespace TP2_Prog3
 
                     Console.Write(cell + "   ");
                 }
+
                 Console.WriteLine();
             }
+
             Console.ResetColor();
             Console.WriteLine();
             Console.WriteLine($"{visiteurs.GetNbVisiteur(visiteurs)} visiteur(s) présent(s) dans le parc.");
@@ -49,33 +68,33 @@ namespace TP2_Prog3
             {
                 double fillPercentage = (double)attraction.VisiteursEnligne.Count / attraction.GetCapacity() * 100;
 
-                
                 if (fillPercentage >= 100)
+                {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
+                }
                 else if (fillPercentage >= 75)
+                {
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
+                }
                 else
+                {
                     Console.ForegroundColor = ConsoleColor.Green;
+                }
 
-               
                 string circle = "●";
 
-              
                 Console.Write(circle);
                 Console.ResetColor();
-                
+
                 Console.WriteLine(
-                    $"    {attraction.GetId(),-8}{(attraction.GetName() + " (" + attraction.GetTypeAttraction() + ")"),-30}{attraction.VisiteursEnligne.Count,5} / {attraction.GetCapacity()}"
-
-
-                );
+                    $"    {attraction.GetId(),-8}{attraction.GetName() + " (" + attraction.GetTypeAttraction() + ")",-30}{attraction.VisiteursEnligne.Count,5} / {attraction.GetCapacity()}");
             }
-
         }
 
-          
-           
-
+        /// <summary>
+        /// Affiche l’historique des actions d’un visiteur dans la console.
+        /// </summary>
+        /// <param name="visiteur">Le visiteur dont on veut afficher l’historique.</param>
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
         {
             Console.WriteLine();
@@ -86,6 +105,5 @@ namespace TP2_Prog3
                 Console.WriteLine($"- {entry}");
             }
         }
-
     }
 }

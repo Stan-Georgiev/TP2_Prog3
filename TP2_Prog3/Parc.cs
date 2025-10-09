@@ -1,24 +1,38 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// <copyright file="Parc.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 namespace TP2_Prog3
 {
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Représente un parc contenant un ensemble d’attractions.
+    /// </summary>
     public class Parc
     {
-        /** Utilisation d'une linked list**/
-        //Hash//
-        private HashSet<Attraction> _attractions = new HashSet<Attraction>();
-    
+        /// <summary>
+        /// Ensemble des attractions présentes dans le parc.
+        /// Utilisation d’un <see cref="HashSet{T}"/> afin d’éviter les doublons.
+        /// </summary>
+        private readonly HashSet<Attraction> attractions = new HashSet<Attraction>();
 
-        public void AjouterAttraction(Attraction a) {
-            _attractions.Add(a);
+        /// <summary>
+        /// Ajoute une attraction au parc.
+        /// </summary>
+        /// <param name="attraction">L’attraction est ajouté.</param>
+        public void AjouterAttraction(Attraction attraction)
+        {
+            this.attractions.Add(attraction);
         }
 
-        public HashSet<Attraction> GetAttractions() => _attractions;
+        /// <summary>
+        /// Retourne l’ensemble des attractions présentes dans le parc.
+        /// </summary>
+        /// <returns>Un <see cref="HashSet{Attraction}"/> contenant toutes les attractions.</returns>
+        public HashSet<Attraction> GetAttractions()
+        {
+            return this.attractions;
+        }
     }
-    
 }
