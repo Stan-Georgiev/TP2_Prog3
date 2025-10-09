@@ -22,7 +22,8 @@ namespace TP2_Prog3
         private string _id;
         private string _name;
         private int _capacity;
-        private TypeAttraction _type { get; }
+        public List<Visiteur> VisiteursEnligne = new List<Visiteur>();
+        private TypeAttraction Type { get; }
 
         
 
@@ -31,27 +32,27 @@ namespace TP2_Prog3
             this._id = id;
             this._name = name;
             this._capacity = capacity;
-            this._type = type;
+            this.Type = type;
         }
 
-        public string getId()
+        public string GetId()
         {
             return _id;
         }
 
-        public string getName()
+        public string GetName()
         {
             return _name;
         }
 
-        public int getCapacity()
+        public int GetCapacity()
         {
             return _capacity;
         }
 
-        public TypeAttraction getType()
+        public TypeAttraction GetTypeAttraction()
         {
-            return _type;
+            return Type;
         }
     }
 }

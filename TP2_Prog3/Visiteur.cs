@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP2_Prog3
 {
-    internal class Visiteur
+    public class Visiteur
     {
         private string _nom;
         private LinkedList<string> _historique = new LinkedList<string>();

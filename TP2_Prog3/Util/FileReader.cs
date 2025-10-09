@@ -4,9 +4,9 @@ namespace TP2_Prog3.Util
 {
     public class FileReader
     {
-        public static List<string> ReadFile(string filePath, out int width, out int height)
+        public static List<List<string>> ReadFile(string filePath, out int width, out int height)
         {
-            var lines = new List<string>();
+            var grid = new List<List<string>>();
             width = 0;
             height = 0;
 
@@ -15,7 +15,7 @@ namespace TP2_Prog3.Util
                 if (!File.Exists(filePath))
                 {
                     Console.WriteLine($"Error: File '{filePath}' does not exist.");
-                    return lines;
+                    return grid;
                 }
 
                 var text = File.ReadAllLines(filePath);
@@ -37,18 +37,23 @@ namespace TP2_Prog3.Util
                         {
                             Console.WriteLine("Error: First line must contain width;height");
                         }
+                        continue; 
                     }
 
-                    lines.Add(text[i]);
+      
+                    var row = text[i]
+                        .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                        .ToList();
+
+                    grid.Add(row);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
             }
-            lines.Remove(lines[0]);   
-            
-            return lines;
+
+            return grid;
         }
     }
 }

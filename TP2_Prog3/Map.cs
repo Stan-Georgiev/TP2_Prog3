@@ -12,9 +12,9 @@ namespace TP2_Prog3
         private static int _height;
         private static int _width;
 
-        private static readonly List<string> ImportedMap = FileReader.ReadFile(_txtPath, out _width, out _height);
+        private static readonly List<List<string>> ImportedMap = FileReader.ReadFile(_txtPath, out _width, out _height);
 
-        public readonly List<string> MapLines = new List<string>();
+        public readonly List<List<string>> MapLines = new List<List<string>>();
 
         public int Height => _height;
         public int Width => _width;

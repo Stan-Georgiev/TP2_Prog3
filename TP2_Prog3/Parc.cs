@@ -11,14 +11,14 @@ namespace TP2_Prog3
     {
         /** Utilisation d'une linked list**/
         //Hash//
-        HashSet<Attraction> attractions = new HashSet<Attraction>();
-        Attraction m1 = new Attraction("M0001", 0,"Manège 1",4);
+        private HashSet<Attraction> _attractions = new HashSet<Attraction>();
+    
 
-        public void ajouterAttraction(Attraction a) {
-            attractions.Add(a);
+        public void AjouterAttraction(Attraction a) {
+            _attractions.Add(a);
         }
 
-        public HashSet<Attraction> GetAttractions() => attractions;
+        public HashSet<Attraction> GetAttractions() => _attractions;
     }
     
 }
