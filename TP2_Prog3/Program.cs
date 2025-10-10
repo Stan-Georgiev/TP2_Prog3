@@ -39,8 +39,8 @@ namespace TP2_Prog3
             Attraction m1 = new Attraction("M0001", Attraction.TypeAttraction.M, "Magasin 1", 8);
             Attraction m2 = new Attraction("M0002", Attraction.TypeAttraction.M, "Magasin 2", 4);
             Attraction m3 = new Attraction("M0003", Attraction.TypeAttraction.M, "Magasin 3", 8);
-            Attraction r1 = new Attraction("R0002", Attraction.TypeAttraction.R, "Restaurant 1", 50);
-            Attraction r2 = new Attraction("R0001", Attraction.TypeAttraction.R, "Restaurant 2", 50);
+            Attraction r1 = new Attraction("R0001", Attraction.TypeAttraction.R, "Restaurant 1", 50);
+            Attraction r2 = new Attraction("R0002", Attraction.TypeAttraction.R, "Restaurant 2", 50);
             Attraction t1 = new Attraction("T0001", Attraction.TypeAttraction.T, "Toilette 1", 8);
             Attraction t2 = new Attraction("T0002", Attraction.TypeAttraction.T, "Toilette 2", 8);
 
@@ -57,16 +57,16 @@ namespace TP2_Prog3
             AffichageConsole.Afficher(Parc, Map, GestionVisiteurs);
 
             // Création et entrée des visiteurs
-            var visiteur1 = new Visiteur("Nom 1");
+            var visiteur1 = new Visiteur("Faylen Varks");
             TestEntrerVisiteur(visiteur1);
 
-            var visiteur2 = new Visiteur("Nom 2");
+            var visiteur2 = new Visiteur("Bjorn Varks");
             TestEntrerVisiteur(visiteur2);
 
-            var visiteur3 = new Visiteur("Nom 3");
+            var visiteur3 = new Visiteur("Aakoda Varks ");
             TestEntrerVisiteur(visiteur3);
 
-            var visiteur4 = new Visiteur("Nom 4");
+            var visiteur4 = new Visiteur("Sigurd Tyrkirsson");
             TestEntrerVisiteur(visiteur4);
 
             // Déplacement des visiteurs dans une attraction

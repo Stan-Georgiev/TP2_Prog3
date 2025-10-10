@@ -12,8 +12,8 @@
         <member name="M:TP2_Prog3.AffichageConsole.Afficher(TP2_Prog3.Parc,TP2_Prog3.Map,TP2_Prog3.GestionVisiteur)">
             <summary>
             Affiche la carte du parc, les attractions et le nombre de visiteurs présents.
-            Les attractions sont colorées en fonction de leur taux de remplissage :
-            - Rouge foncé : complet
+            Les attractions sont colorées en fonction de leur taux de remplissage  –
+             Rouge foncé : complet
             - Jaune foncé : plus de 75 % de remplissage
             - Vert : disponible.
             </summary>
@@ -33,14 +33,20 @@
             </summary>
         </member>
         <member name="F:TP2_Prog3.Attraction.VisiteursEnligne">
-            <summary>
-            Liste des visiteurs actuellement en file d’attente pour cette attraction.
-            </summary>
+             <summary>
+             Liste des visiteurs actuellement en file d’attente pour cette attraction.
+             </summary>
+            
         </member>
-        <member name="P:TP2_Prog3.Attraction.Type">
+        <member name="M:TP2_Prog3.Attraction.#ctor(System.String,TP2_Prog3.Attraction.TypeAttraction,System.String,System.Int32)">
             <summary>
-            Obtient le type de cette attraction.
+            Initializes a new instance of the <see cref="T:TP2_Prog3.Attraction"/> class.
+            Initialise une nouvelle instance de la classe <see cref="T:TP2_Prog3.Attraction"/>.
             </summary>
+            <param name="id">Identifiant unique de l’attraction.</param>
+            <param name="type">Type de l’attraction.</param>
+            <param name="name">Nom de l’attraction.</param>
+            <param name="capacity">Capacité maximale de l’attraction.</param>
         </member>
         <member name="T:TP2_Prog3.Attraction.TypeAttraction">
             <summary>
@@ -77,15 +83,10 @@
              Restaurant (R).
             </summary>
         </member>
-        <member name="M:TP2_Prog3.Attraction.#ctor(System.String,TP2_Prog3.Attraction.TypeAttraction,System.String,System.Int32)">
+        <member name="P:TP2_Prog3.Attraction.Type">
             <summary>
-            Initializes a new instance of the <see cref="T:TP2_Prog3.Attraction"/> class.
-            Initialise une nouvelle instance de la classe <see cref="T:TP2_Prog3.Attraction"/>.
+            Gets obtient le type de cette attraction.
             </summary>
-            <param name="id">Identifiant unique de l’attraction.</param>
-            <param name="type">Type de l’attraction.</param>
-            <param name="name">Nom de l’attraction.</param>
-            <param name="capacity">Capacité maximale de l’attraction.</param>
         </member>
         <member name="M:TP2_Prog3.Attraction.GetId">
             <summary>
@@ -117,16 +118,16 @@
             ainsi que leur interaction avec les attractions.
             </summary>
         </member>
-        <member name="F:TP2_Prog3.GestionVisiteur.VisiteursDansParc">
+        <member name="P:TP2_Prog3.GestionVisiteur.VisiteursDansParc">
             <summary>
-            Liste des visiteurs actuellement présents dans le parc.
+            Gets liste des visiteurs actuellement présents dans le parc.
             </summary>
         </member>
         <member name="M:TP2_Prog3.GestionVisiteur.GetNbVisiteur(TP2_Prog3.GestionVisiteur)">
             <summary>
             Retourne le nombre de visiteurs actuellement dans le parc.
             </summary>
-            <param name="visiteur">Instance de gestion des visiteurs.</param>
+            <param name="gestionVisiteur">Instance de gestion des visiteurs.</param>
             <returns>Le nombre de visiteurs présents dans le parc.</returns>
         </member>
         <member name="M:TP2_Prog3.GestionVisiteur.EntrerVisiteurDansFilAttente(System.String,TP2_Prog3.Visiteur)">
@@ -150,15 +151,15 @@
             <summary>
             Fait entrer un visiteur dans le parc et ajoute une entrée dans son historique.
             </summary>
-            <param name="visiteur">Le visiteur à ajouter.</param>
+            <param name="visiteur">Le visiteur est ajouté.</param>
             <param name="gestionVisiteur">Gestionnaire des visiteurs.</param>
         </member>
         <member name="M:TP2_Prog3.GestionVisiteur.SortirVisiteurDuParc(TP2_Prog3.Visiteur,TP2_Prog3.GestionVisiteur,TP2_Prog3.Parc)">
             <summary>
-            Fait sortir un visiteur du parc, le retire des attractions où il se trouve
+            Fait sortir un visiteur du parc, le retire des attractions avec lesquelles il se trouve
             et ajoute une entrée dans son historique.
             </summary>
-            <param name="visiteur">Le visiteur à retirer.</param>
+            <param name="visiteur">Le visiteur est retiré.</param>
             <param name="gestionVisiteur">Gestionnaire des visiteurs.</param>
             <param name="parc">Le parc contenant les attractions.</param>
         </member>
@@ -168,19 +169,14 @@
             La carte contient les lignes et colonnes définissant la disposition du parc.
             </summary>
         </member>
-        <member name="F:TP2_Prog3.Map._txtPath">
+        <member name="F:TP2_Prog3.Map.MapLines">
+            <summary>
+            Lignes de la carte générée et utilisées dans le programme.
+            </summary>
+        </member>
+        <member name="F:TP2_Prog3.Map.TxtPath">
             <summary>
             Chemin du fichier texte contenant la carte.
-            </summary>
-        </member>
-        <member name="F:TP2_Prog3.Map._height">
-            <summary>
-            Hauteur de la carte (nombre de lignes).
-            </summary>
-        </member>
-        <member name="F:TP2_Prog3.Map._width">
-            <summary>
-            Largeur de la carte (nombre de colonnes).
             </summary>
         </member>
         <member name="F:TP2_Prog3.Map.ImportedMap">
@@ -189,25 +185,30 @@
             Chaque ligne est représentée par une liste de chaînes.
             </summary>
         </member>
-        <member name="F:TP2_Prog3.Map.MapLines">
+        <member name="F:TP2_Prog3.Map.height">
             <summary>
-            Lignes de la carte générée et utilisées dans le programme.
+            Hauteur de la carte (nombre de lignes).
             </summary>
         </member>
-        <member name="P:TP2_Prog3.Map.Height">
+        <member name="F:TP2_Prog3.Map.width">
             <summary>
-            Obtient la hauteur de la carte.
-            </summary>
-        </member>
-        <member name="P:TP2_Prog3.Map.Width">
-            <summary>
-            Obtient la largeur de la carte.
+            Largeur de la carte (nombre de colonnes).
             </summary>
         </member>
         <member name="M:TP2_Prog3.Map.#ctor">
             <summary>
-            Initialise une nouvelle instance de la classe <see cref="T:TP2_Prog3.Map"/> 
-            et génère la carte à partir du fichier importé.
+            Initializes a new instance of the <see cref="T:TP2_Prog3.Map"/> class.
+            Génère la carte à partir du fichier importé.
+            </summary>
+        </member>
+        <member name="P:TP2_Prog3.Map.Height">
+            <summary>
+            Gets la hauteur de la carte.
+            </summary>
+        </member>
+        <member name="P:TP2_Prog3.Map.Width">
+            <summary>
+            Gets la largeur de la carte.
             </summary>
         </member>
         <member name="M:TP2_Prog3.Map.GenerateMap">
@@ -220,7 +221,7 @@
             Représente un parc contenant un ensemble d’attractions.
             </summary>
         </member>
-        <member name="F:TP2_Prog3.Parc._attractions">
+        <member name="F:TP2_Prog3.Parc.attractions">
             <summary>
             Ensemble des attractions présentes dans le parc.
             Utilisation d’un <see cref="T:System.Collections.Generic.HashSet`1"/> afin d’éviter les doublons.
@@ -230,7 +231,7 @@
             <summary>
             Ajoute une attraction au parc.
             </summary>
-            <param name="a">L’attraction à ajouter.</param>
+            <param name="attraction">L’attraction est ajouté.</param>
         </member>
         <member name="M:TP2_Prog3.Parc.GetAttractions">
             <summary>
@@ -240,8 +241,8 @@
         </member>
         <member name="T:TP2_Prog3.Program">
             <summary>
-            Classe principale du programme. 
-            Elle initialise le parc, les attractions et gère le cycle de vie des visiteurs.
+            Classe principale du programme.
+            Elle initialise le parc, les attractions et gèrent le cycle de vie des visiteurs.
             </summary>
         </member>
         <member name="F:TP2_Prog3.Program.Parc">
@@ -257,6 +258,12 @@
         <member name="F:TP2_Prog3.Program.GestionVisiteurs">
             <summary>
             Gestionnaire des visiteurs permettant d’entrer, de sortir et de déplacer les visiteurs.
+            </summary>
+        </member>
+        <member name="M:TP2_Prog3.Program.Main">
+            <summary>
+            Point d’entrée principal du programme.
+            Initialise les attractions, ajoute des visiteurs et simule leurs déplacements.
             </summary>
         </member>
         <member name="M:TP2_Prog3.Program.Afficher">
@@ -275,12 +282,6 @@
             Teste la sortie d’un visiteur du parc.
             </summary>
             <param name="visiteur">Le visiteur à faire sortir.</param>
-        </member>
-        <member name="M:TP2_Prog3.Program.Main">
-            <summary>
-            Point d’entrée principal du programme.
-            Initialise les attractions, ajoute des visiteurs et simule leurs déplacements.
-            </summary>
         </member>
         <member name="T:TP2_Prog3.Util.FileReader">
             <summary>
@@ -307,9 +308,19 @@
             Chaque visiteur possède un nom et un historique de ses actions dans le parc.
             </summary>
         </member>
+        <member name="F:TP2_Prog3.Visiteur.nom">
+            <summary>
+            Nom du visiteur.
+            </summary>
+        </member>
+        <member name="F:TP2_Prog3.Visiteur.historique">
+            <summary>
+            Historique des actions effectuées par le visiteur.
+            </summary>
+        </member>
         <member name="M:TP2_Prog3.Visiteur.#ctor(System.String)">
             <summary>
-            Initialise une nouvelle instance de la classe <see cref="T:TP2_Prog3.Visiteur"/>.
+            Initializes a new instance of the <see cref="T:TP2_Prog3.Visiteur"/> class.
             </summary>
             <param name="nom">Nom du visiteur.</param>
         </member>
