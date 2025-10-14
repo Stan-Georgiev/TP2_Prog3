@@ -4,6 +4,10 @@
 
 namespace TP2_Prog3
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// Classe utilitaire responsable de l’affichage du parc et des visiteurs dans la console.
     /// </summary>
@@ -11,8 +15,8 @@ namespace TP2_Prog3
     {
         /// <summary>
         /// Affiche la carte du parc, les attractions et le nombre de visiteurs présents.
-        /// Les attractions sont colorées en fonction de leur taux de remplissage  –
-        ///  Rouge foncé : complet
+        /// Les attractions sont colorées en fonction de leur taux de remplissage :
+        /// - Rouge foncé : complet
         /// - Jaune foncé : plus de 75 % de remplissage
         /// - Vert : disponible.
         /// </summary>
@@ -28,8 +32,7 @@ namespace TP2_Prog3
             {
                 foreach (var cell in t)
                 {
-                    var cell1 = cell;
-                    Attraction? attraction = attractions.FirstOrDefault(a => a.GetId().ToString() == cell1);
+                    Attraction? attraction = attractions.FirstOrDefault(a => a.GetId().ToString() == cell);
 
                     if (attraction != null)
                     {
@@ -81,13 +84,14 @@ namespace TP2_Prog3
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
 
-                string circle = "●";
-
-                Console.Write(circle);
+                const string Circle = "●";
+                Console.Write(Circle);
                 Console.ResetColor();
 
                 Console.WriteLine(
-                    $"    {attraction.GetId(),-8}{attraction.GetName() + " (" + attraction.GetTypeAttraction() + ")",-30}{attraction.VisiteursEnligne.Count,5} / {attraction.GetCapacity()}");
+                    $"    {attraction.GetId(),-8}" +
+                    $"{attraction.GetName() + " (" + attraction.GetTypeAttraction() + ")",-30}" +
+                    $"{attraction.VisiteursEnligne.Count,5} / {attraction.GetCapacity()}");
             }
         }
 
@@ -100,6 +104,7 @@ namespace TP2_Prog3
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"### {visiteur} ###");
+
             foreach (string entry in visiteur.GetHistorique())
             {
                 Console.WriteLine($"- {entry}");
