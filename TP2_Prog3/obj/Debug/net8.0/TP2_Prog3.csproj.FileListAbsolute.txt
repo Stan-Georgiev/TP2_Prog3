@@ -29,3 +29,19 @@ C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.pd
 C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.genruntimeconfig.cache
 C:\Users\2494186\Desktop\Nouveau dossier\TP2_Prog3\obj\Debug\net8.0\ref\TP2_Prog3.dll
 C:\Users\6298861\Desktop\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.xml
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.exe
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.deps.json
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.runtimeconfig.json
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.dll
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.pdb
+C:\Storage\TP2_Prog3\TP2_Prog3\bin\Debug\net8.0\TP2_Prog3.xml
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.AssemblyInfoInputs.cache
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.AssemblyInfo.cs
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.csproj.CoreCompileInputs.cache
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.sourcelink.json
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.dll
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\refint\TP2_Prog3.dll
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.pdb
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\TP2_Prog3.genruntimeconfig.cache
+C:\Storage\TP2_Prog3\TP2_Prog3\obj\Debug\net8.0\ref\TP2_Prog3.dll

@@ -12,8 +12,8 @@
         <member name="M:TP2_Prog3.AffichageConsole.Afficher(TP2_Prog3.Parc,TP2_Prog3.Map,TP2_Prog3.GestionVisiteur)">
             <summary>
             Affiche la carte du parc, les attractions et le nombre de visiteurs présents.
-            Les attractions sont colorées en fonction de leur taux de remplissage  –
-             Rouge foncé : complet
+            Les attractions sont colorées en fonction de leur taux de remplissage :
+            - Rouge foncé : complet
             - Jaune foncé : plus de 75 % de remplissage
             - Vert : disponible.
             </summary>
