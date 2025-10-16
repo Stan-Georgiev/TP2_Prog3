@@ -60,23 +60,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\6298861\\.nuget\\packages\\": {},
+    "C:\\Users\\panda\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\6298861\\Desktop\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
+      "projectUniqueName": "C:\\Storage\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
       "projectName": "TP2_Prog3",
-      "projectPath": "C:\\Users\\6298861\\Desktop\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
-      "packagesPath": "C:\\Users\\6298861\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\6298861\\Desktop\\TP2_Prog3\\TP2_Prog3\\obj\\",
+      "projectPath": "C:\\Storage\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
+      "packagesPath": "C:\\Users\\panda\\.nuget\\packages\\",
+      "outputPath": "C:\\Storage\\TP2_Prog3\\TP2_Prog3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\6298861\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -103,7 +103,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -132,7 +132,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

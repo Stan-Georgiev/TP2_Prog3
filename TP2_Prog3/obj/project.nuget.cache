@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RZs0UTgOlSQ=",
+  "dgSpecHash": "6eJMTPdVJ+8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\6298861\\Desktop\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
+  "projectFilePath": "C:\\Storage\\TP2_Prog3\\TP2_Prog3\\TP2_Prog3.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\6298861\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.556\\stylecop.analyzers.1.2.0-beta.556.nupkg.sha512",
-    "C:\\Users\\6298861\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.556\\stylecop.analyzers.unstable.1.2.0.556.nupkg.sha512"
+    "C:\\Users\\panda\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.556\\stylecop.analyzers.1.2.0-beta.556.nupkg.sha512",
+    "C:\\Users\\panda\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.556\\stylecop.analyzers.unstable.1.2.0.556.nupkg.sha512"
   ],
   "logs": []
 }
