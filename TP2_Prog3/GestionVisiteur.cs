@@ -14,7 +14,7 @@ namespace TP2_Prog3
         /// <summary>
         /// Gets liste des visiteurs actuellement présents dans le parc.
         /// </summary>
-        public List<Visiteur> VisiteursDansParc { get; } = new List<Visiteur>();
+        public LinkedList<Visiteur> VisiteursDansParc { get; } = new LinkedList<Visiteur>();
 
         /// <summary>
         /// Retourne le nombre de visiteurs actuellement dans le parc.
@@ -66,7 +66,7 @@ namespace TP2_Prog3
         /// <param name="gestionVisiteur">Gestionnaire des visiteurs.</param>
         public void EntrerVisiteurDansParc(Visiteur visiteur, GestionVisiteur gestionVisiteur)
         {
-            gestionVisiteur.VisiteursDansParc.Add(visiteur);
+            gestionVisiteur.VisiteursDansParc.AddLast(visiteur);
             visiteur.AjouterHistorique($"{visiteur.GetNom()} rentre dans le parc");
         }
 
