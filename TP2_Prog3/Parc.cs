@@ -13,9 +13,9 @@ namespace TP2_Prog3
     {
         /// <summary>
         /// Ensemble des attractions présentes dans le parc.
-        /// Utilisation d’un <see cref="HashSet{T}"/> afin d’éviter les doublons.
+        /// Utilisation d’un <see cref="LinkedList{T}"/>.
         /// </summary>
-        private readonly HashSet<Attraction> attractions = new HashSet<Attraction>();
+        private readonly LinkedList<Attraction> attractions = new LinkedList<Attraction>();
 
         /// <summary>
         /// Ajoute une attraction au parc.
@@ -23,14 +23,14 @@ namespace TP2_Prog3
         /// <param name="attraction">L’attraction est ajouté.</param>
         public void AjouterAttraction(Attraction attraction)
         {
-            this.attractions.Add(attraction);
+            this.attractions.AddLast(attraction);
         }
 
         /// <summary>
         /// Retourne l’ensemble des attractions présentes dans le parc.
         /// </summary>
-        /// <returns>Un <see cref="HashSet{Attraction}"/> contenant toutes les attractions.</returns>
-        public HashSet<Attraction> GetAttractions()
+        /// <returns>Un <see cref="LinkedList{Attraction}"/> contenant toutes les attractions.</returns>
+        public LinkedList<Attraction> GetAttractions()
         {
             return this.attractions;
         }

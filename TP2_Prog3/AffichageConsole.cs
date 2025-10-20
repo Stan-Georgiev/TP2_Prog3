@@ -25,7 +25,7 @@ namespace TP2_Prog3
         /// <param name="visiteurs">Gestionnaire des visiteurs.</param>
         public static void Afficher(Parc parc, Map map, GestionVisiteur visiteurs)
         {
-            HashSet<Attraction> attractions = parc.GetAttractions();
+            LinkedList<Attraction> attractions = parc.GetAttractions();
             Console.Clear();
 
             foreach (var t in map.MapLines)

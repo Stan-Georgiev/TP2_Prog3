@@ -16,6 +16,7 @@ namespace TP2_Prog3
     {
         /// <summary>
         /// Lignes de la carte générée et utilisées dans le programme.
+        /// Must be matrice.
         /// </summary>
         public readonly List<List<string>> MapLines = new List<List<string>>();
 
