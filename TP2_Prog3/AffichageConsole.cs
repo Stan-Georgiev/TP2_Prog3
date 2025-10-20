@@ -28,7 +28,7 @@ namespace TP2_Prog3
             LinkedList<Attraction> attractions = parc.GetAttractions();
             Console.Clear();
 
-            foreach (var t in map.MapLines)
+            foreach (var t in map.Maps)
             {
                 foreach (var cell in t)
                 {

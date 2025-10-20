@@ -6,6 +6,8 @@ namespace TP2_Prog3
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq.Expressions;
+    using System.Runtime.InteropServices;
     using TP2_Prog3.Util;
 
     /// <summary>
@@ -18,18 +20,21 @@ namespace TP2_Prog3
         /// Lignes de la carte générée et utilisées dans le programme.
         /// Must be matrice.
         /// </summary>
-        public readonly List<List<string>> MapLines = new List<List<string>>();
+        public int[,] Maps = new int[20,20];
 
+        private string[] MapLines = new string[20];
         /// <summary>
         /// Chemin du fichier texte contenant la carte.
         /// </summary>
-        private static readonly string TxtPath = Path.Combine(Environment.CurrentDirectory, "map.txt");
+        private string destinationFilePath;
+        private string sourceFilePath;
+        private string fileName;
 
         /// <summary>
         /// Carte importée depuis le fichier texte.
         /// Chaque ligne est représentée par une liste de chaînes.
         /// </summary>
-        private static readonly List<List<string>> ImportedMap = FileReader.ReadFile(TxtPath, out width, out height);
+ 
 
         /// <summary>
         /// Hauteur de la carte (nombre de lignes).
@@ -60,15 +65,40 @@ namespace TP2_Prog3
         /// </summary>
         public int Width => width;
 
+
+        public string[] lines = new string[20]; 
+
+
+        string[] map = new string[20];
         /// <summary>
         /// Génère la carte en copiant les lignes importées dans <see cref="MapLines"/>.
         /// </summary>
         private void GenerateMap()
         {
-            foreach (var line in ImportedMap)
+            MapLines = lines.Skip(1).ToArray();
+            for (int i = 0;  i <= MapLines.Length; i++)
             {
-                this.MapLines.Add(line);
+                if (map[i] == "-----")
+                {
+                    MapLines[i].Split();
+                }
+                else
+                {
+                    
+                    MapLines[i].Trim();
+                }
             }
+        }
+
+        public void CopyToDirectory(string destinationDirectoryPath)
+        {
+            sourceFilePath = "../../../map.txt";
+
+            string fileName = Path.GetFileName(sourceFilePath);
+
+            string destinationFilePath = Path.Combine(destinationDirectoryPath, fileName);
+
+            File.Copy(sourceFilePath, destinationFilePath, true);
         }
     }
 }
