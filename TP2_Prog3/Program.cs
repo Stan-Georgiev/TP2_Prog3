@@ -72,7 +72,7 @@ namespace TP2_Prog3
             // Déplacement des visiteurs dans une attraction
             foreach (var t in GestionVisiteurs.VisiteursDansParc)
             {
-                GestionVisiteurs.EntrerVisiteurDansAttraction("M0002", t, Parc);
+                GestionVisiteur.EntrerVisiteurDansAttraction("M0002", t, Parc);
                 Afficher();
             }
 

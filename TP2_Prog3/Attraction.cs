@@ -93,10 +93,14 @@ namespace TP2_Prog3
             return this.name;
         }
 
+        /// <summary>
+        /// Retourne l'id dans le format requis.
+        /// </summary>
+        /// <returns>l'id du manege dans la carte.</returns>
         public int GetNumericId()
         {
             // Retourne le id en format "0002", "0010", etc.
-            string numericPart = new string(this.GetId().Skip(1).ToArray()); 
+            var numericPart = new string(this.GetId().Skip(1).ToArray());
             return int.Parse(numericPart);
         }
 

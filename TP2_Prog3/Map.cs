@@ -16,17 +16,17 @@ namespace TP2_Prog3
     public class Map
     {
         /// <summary>
-        /// Matrice de chaînes représentant la carte du parc.
+        /// Gets matrice de chaînes représentant la carte du parc.
         /// </summary>
         public string[,] Maps { get; private set; }
 
         /// <summary>
-        /// Hauteur de la carte (nombre de lignes).
+        /// Gets hauteur de la carte (nombre de lignes).
         /// </summary>
         public int Height { get; private set; }
 
         /// <summary>
-        /// Largeur de la carte (nombre de colonnes).
+        /// Gets largeur de la carte (nombre de colonnes).
         /// </summary>
         public int Width { get; private set; }
 
@@ -36,6 +36,7 @@ namespace TP2_Prog3
         private readonly string mapFilePath = "../../../map.txt";
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Map"/> class.
         /// Initialise une nouvelle instance de la classe <see cref="Map"/>.
         /// </summary>
         public Map()
@@ -48,12 +49,12 @@ namespace TP2_Prog3
         /// </summary>
         private void LoadMap()
         {
-            if (!File.Exists(mapFilePath))
+            if (!File.Exists(this.mapFilePath))
             {
-                throw new FileNotFoundException($"Fichier introuvable : {mapFilePath}");
+                throw new FileNotFoundException($"Fichier introuvable : {this.mapFilePath}");
             }
 
-            string[] lines = File.ReadAllLines(mapFilePath);
+            string[] lines = File.ReadAllLines(this.mapFilePath);
 
             if (lines.Length == 0)
             {
@@ -63,8 +64,8 @@ namespace TP2_Prog3
             // Première ligne : "20;20"
             string[] sizeParts = lines[0].Split(';');
             if (sizeParts.Length != 2 ||
-                !int.TryParse(sizeParts[0], out int height) ||
-                !int.TryParse(sizeParts[1], out int width))
+                !int.TryParse(sizeParts[0], out var height) ||
+                !int.TryParse(sizeParts[1], out var width))
             {
                 throw new InvalidDataException("La première ligne doit être du format 'Hauteur;Largeur'.");
             }
@@ -81,7 +82,7 @@ namespace TP2_Prog3
                     throw new InvalidDataException($"Le fichier de carte ne contient pas assez de lignes (attendu : {height}).");
                 }
 
-                // Chaque ligne contient des valeurs séparées par plusieurs espaces
+                // Chaque ligne contient des valeurs séparées par plusieurs espaces.
                 string[] cells = lines[i + 1]
                     .Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -95,16 +96,6 @@ namespace TP2_Prog3
                     this.Maps[i, j] = cells[j].Trim();
                 }
             }
-        }
-
-        /// <summary>
-        /// Copie le fichier de la carte dans un autre répertoire.
-        /// </summary>
-        public void CopyToDirectory(string destinationDirectoryPath)
-        {
-            string fileName = Path.GetFileName(mapFilePath);
-            string destinationFilePath = Path.Combine(destinationDirectoryPath, fileName);
-            File.Copy(mapFilePath, destinationFilePath, true);
         }
     }
 }

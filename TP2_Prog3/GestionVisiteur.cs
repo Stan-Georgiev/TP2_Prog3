@@ -17,6 +17,28 @@ namespace TP2_Prog3
         public LinkedList<Visiteur> VisiteursDansParc { get; } = new LinkedList<Visiteur>();
 
         /// <summary>
+        /// Fait entrer un visiteur dans une attraction si la capacité le permet.
+        /// Sinon, ajoute une note dans son historique indiquant qu’il n’a pas pu entrer.
+        /// </summary>
+        /// <param name="attractionId">Identifiant de l’attraction.</param>
+        /// <param name="visiteur">Le visiteur concerné.</param>
+        /// <param name="parc">Le parc contenant les attractions.</param>
+        public static void EntrerVisiteurDansAttraction(string attractionId, Visiteur visiteur, Parc parc)
+        {
+            foreach (var attraction in parc.GetAttractions())
+            {
+                if (attraction.GetId() == attractionId && attraction.VisiteursEnligne.Count < attraction.GetCapacity())
+                {
+                    attraction.VisiteursEnligne.Add(visiteur);
+                }
+                else if (attraction.GetId() == attractionId && attraction.VisiteursEnligne.Count >= attraction.GetCapacity())
+                {
+                    visiteur.AjouterHistorique($"{visiteur.GetNom()} est terriblement triste, il ne reste pas de place dans la file de l'attraction {attractionId}!");
+                }
+            }
+        }
+
+        /// <summary>
         /// Retourne le nombre de visiteurs actuellement dans le parc.
         /// </summary>
         /// <param name="gestionVisiteur">Instance de gestion des visiteurs.</param>
@@ -35,28 +57,6 @@ namespace TP2_Prog3
         public void EntrerVisiteurDansFilAttente(string attractionId, Visiteur visiteur)
         {
             visiteur.AjouterHistorique($"{visiteur.GetNom()} rentre dans la file de l'attraction {attractionId}");
-        }
-
-        /// <summary>
-        /// Fait entrer un visiteur dans une attraction si la capacité le permet.
-        /// Sinon, ajoute une note dans son historique indiquant qu’il n’a pas pu entrer.
-        /// </summary>
-        /// <param name="attractionId">Identifiant de l’attraction.</param>
-        /// <param name="visiteur">Le visiteur concerné.</param>
-        /// <param name="parc">Le parc contenant les attractions.</param>
-        public void EntrerVisiteurDansAttraction(string attractionId, Visiteur visiteur, Parc parc)
-        {
-            foreach (var attraction in parc.GetAttractions())
-            {
-                if (attraction.GetId() == attractionId && attraction.VisiteursEnligne.Count < attraction.GetCapacity())
-                {
-                    attraction.VisiteursEnligne.Add(visiteur);
-                }
-                else if (attraction.GetId() == attractionId && attraction.VisiteursEnligne.Count >= attraction.GetCapacity())
-                {
-                    visiteur.AjouterHistorique($"{visiteur.GetNom()} est terriblement triste, il ne reste pas de place dans la file de l'attraction {attractionId}!");
-                }
-            }
         }
 
         /// <summary>

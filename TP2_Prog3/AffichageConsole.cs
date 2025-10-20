@@ -9,6 +9,12 @@
     /// </summary>
     internal static class AffichageConsole
     {
+        /// <summary>
+        /// Affiche la carte du parc actuelle avec une representation visuelle en couleur pour les attractions present dans le parc.
+        /// </summary>
+        /// <param name="parc">Le parc actuel.</param>
+        /// <param name="map">La carte concerner.</param>
+        /// <param name="gestionVisiteurs">La gestion des vesiteurs dans les attractions.</param>
         public static void Afficher(Parc parc, Map map, GestionVisiteur gestionVisiteurs)
         {
             LinkedList<Attraction> attractions = parc.GetAttractions();
@@ -83,8 +89,8 @@
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
 
-                const string Circle = "●";
-                Console.Write(Circle);
+                const string circle = "●";
+                Console.Write(circle);
                 Console.ResetColor();
 
                 Console.WriteLine(
@@ -94,6 +100,10 @@
             }
         }
 
+        /// <summary>
+        /// Classe utilitaire responsable de l’affichage du parc et des visiteurs dans la console.
+        /// <param name="visiteur"> Le visiteur concerner.</param>
+        /// </summary>
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
         {
             Console.WriteLine();
