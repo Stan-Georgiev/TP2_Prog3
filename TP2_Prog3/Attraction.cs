@@ -93,6 +93,13 @@ namespace TP2_Prog3
             return this.name;
         }
 
+        public int GetNumericId()
+        {
+            // Retourne le id en format "0002", "0010", etc.
+            string numericPart = new string(this.GetId().Skip(1).ToArray()); 
+            return int.Parse(numericPart);
+        }
+
         /// <summary>
         /// Retourne la capacité maximale de l’attraction.
         /// </summary>

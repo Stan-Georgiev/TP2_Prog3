@@ -1,104 +1,110 @@
 ﻿// <copyright file="Map.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
+
 namespace TP2_Prog3
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Linq.Expressions;
-    using System.Runtime.InteropServices;
-    using TP2_Prog3.Util;
 
     /// <summary>
-    /// Représente la carte du parc, importée depuis un fichier texte.
-    /// La carte contient les lignes et colonnes définissant la disposition du parc.
+    /// Représente la carte du parc d'attractions importée depuis un fichier texte.
+    /// Les données sont stockées dans une matrice de chaînes où chaque cellule contient :
+    /// - L'ID d'une attraction (ex : M0001, R0002)
+    /// - "-----" pour un emplacement vide.
     /// </summary>
     public class Map
     {
         /// <summary>
-        /// Lignes de la carte générée et utilisées dans le programme.
-        /// Must be matrice.
+        /// Matrice de chaînes représentant la carte du parc.
         /// </summary>
-        public int[,] Maps = new int[20,20];
-
-        private string[] MapLines = new string[20];
-        /// <summary>
-        /// Chemin du fichier texte contenant la carte.
-        /// </summary>
-        private string destinationFilePath;
-        private string sourceFilePath;
-        private string fileName;
-
-        /// <summary>
-        /// Carte importée depuis le fichier texte.
-        /// Chaque ligne est représentée par une liste de chaînes.
-        /// </summary>
- 
+        public string[,] Maps { get; private set; }
 
         /// <summary>
         /// Hauteur de la carte (nombre de lignes).
         /// </summary>
-        private static int height;
+        public int Height { get; private set; }
 
         /// <summary>
         /// Largeur de la carte (nombre de colonnes).
         /// </summary>
-        private static int width;
+        public int Width { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Map"/> class.
-        /// Génère la carte à partir du fichier importé.
+        /// Chemin du fichier contenant la carte.
+        /// </summary>
+        private readonly string mapFilePath = "../../../map.txt";
+
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="Map"/>.
         /// </summary>
         public Map()
         {
-            this.GenerateMap();
+            this.LoadMap();
         }
 
         /// <summary>
-        /// Gets la hauteur de la carte.
+        /// Charge la carte depuis le fichier texte et la stocke dans la matrice.
         /// </summary>
-        public int Height => height;
-
-        /// <summary>
-        /// Gets la largeur de la carte.
-        /// </summary>
-        public int Width => width;
-
-
-        public string[] lines = new string[20]; 
-
-
-        string[] map = new string[20];
-        /// <summary>
-        /// Génère la carte en copiant les lignes importées dans <see cref="MapLines"/>.
-        /// </summary>
-        private void GenerateMap()
+        private void LoadMap()
         {
-            MapLines = lines.Skip(1).ToArray();
-            for (int i = 0;  i <= MapLines.Length; i++)
+            if (!File.Exists(mapFilePath))
             {
-                if (map[i] == "-----")
+                throw new FileNotFoundException($"Fichier introuvable : {mapFilePath}");
+            }
+
+            string[] lines = File.ReadAllLines(mapFilePath);
+
+            if (lines.Length == 0)
+            {
+                throw new InvalidDataException("Le fichier map.txt est vide.");
+            }
+
+            // Première ligne : "20;20"
+            string[] sizeParts = lines[0].Split(';');
+            if (sizeParts.Length != 2 ||
+                !int.TryParse(sizeParts[0], out int height) ||
+                !int.TryParse(sizeParts[1], out int width))
+            {
+                throw new InvalidDataException("La première ligne doit être du format 'Hauteur;Largeur'.");
+            }
+
+            this.Height = height;
+            this.Width = width;
+            this.Maps = new string[height, width];
+
+            // Lire le reste des lignes
+            for (int i = 0; i < height; i++)
+            {
+                if (i + 1 >= lines.Length)
                 {
-                    MapLines[i].Split();
+                    throw new InvalidDataException($"Le fichier de carte ne contient pas assez de lignes (attendu : {height}).");
                 }
-                else
+
+                // Chaque ligne contient des valeurs séparées par plusieurs espaces
+                string[] cells = lines[i + 1]
+                    .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                if (cells.Length != width)
                 {
-                    
-                    MapLines[i].Trim();
+                    throw new InvalidDataException($"La ligne {i + 2} ne contient pas {width} colonnes (trouvé : {cells.Length}).");
+                }
+
+                for (int j = 0; j < width; j++)
+                {
+                    this.Maps[i, j] = cells[j].Trim();
                 }
             }
         }
 
+        /// <summary>
+        /// Copie le fichier de la carte dans un autre répertoire.
+        /// </summary>
         public void CopyToDirectory(string destinationDirectoryPath)
         {
-            sourceFilePath = "../../../map.txt";
-
-            string fileName = Path.GetFileName(sourceFilePath);
-
+            string fileName = Path.GetFileName(mapFilePath);
             string destinationFilePath = Path.Combine(destinationDirectoryPath, fileName);
-
-            File.Copy(sourceFilePath, destinationFilePath, true);
+            File.Copy(mapFilePath, destinationFilePath, true);
         }
     }
 }

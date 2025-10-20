@@ -1,8 +1,4 @@
-﻿// <copyright file="AffichageConsole.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
-namespace TP2_Prog3
+﻿namespace TP2_Prog3
 {
     using System;
     using System.Collections.Generic;
@@ -13,50 +9,53 @@ namespace TP2_Prog3
     /// </summary>
     internal static class AffichageConsole
     {
-        /// <summary>
-        /// Affiche la carte du parc, les attractions et le nombre de visiteurs présents.
-        /// Les attractions sont colorées en fonction de leur taux de remplissage :
-        /// - Rouge foncé : complet
-        /// - Jaune foncé : plus de 75 % de remplissage
-        /// - Vert : disponible.
-        /// </summary>
-        /// <param name="parc">Le parc contenant les attractions.</param>
-        /// <param name="map">La carte du parc.</param>
-        /// <param name="visiteurs">Gestionnaire des visiteurs.</param>
-        public static void Afficher(Parc parc, Map map, GestionVisiteur visiteurs)
+        public static void Afficher(Parc parc, Map map, GestionVisiteur gestionVisiteurs)
         {
             LinkedList<Attraction> attractions = parc.GetAttractions();
             Console.Clear();
 
-            foreach (var t in map.Maps)
+            // --- Affichage de la carte ---
+            for (int i = 0; i < map.Height; i++)
             {
-                foreach (var cell in t)
+                for (int j = 0; j < map.Width; j++)
                 {
-                    Attraction? attraction = attractions.FirstOrDefault(a => a.GetId().ToString() == cell);
+                    string cell = map.Maps[i, j];
 
-                    if (attraction != null)
+                    if (cell == "-----")
                     {
-                        double fillPercentage = (double)attraction.VisiteursEnligne.Count / attraction.GetCapacity() * 100;
-
-                        if (fillPercentage >= 100)
-                        {
-                            Console.ForegroundColor = ConsoleColor.DarkRed;
-                        }
-                        else if (fillPercentage >= 75)
-                        {
-                            Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        }
-                        else
-                        {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                        }
+                        Console.ResetColor();
+                        Console.Write("-----   ");
                     }
                     else
                     {
-                        Console.ResetColor();
-                    }
+                        Attraction? attraction = attractions.FirstOrDefault(a => a.GetId() == cell);
 
-                    Console.Write(cell + "   ");
+                        if (attraction != null)
+                        {
+                            double fillPercentage = (double)attraction.VisiteursEnligne.Count / attraction.GetCapacity() * 100;
+
+                            if (fillPercentage >= 100)
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                            }
+                            else if (fillPercentage >= 75)
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                            }
+
+                            Console.Write($"{cell,-6} ");
+                        }
+                        else
+                        {
+                            // ID inconnu (pas dans la liste d’attractions)
+                            Console.ResetColor();
+                            Console.Write($"{cell,-6} ");
+                        }
+                    }
                 }
 
                 Console.WriteLine();
@@ -64,9 +63,9 @@ namespace TP2_Prog3
 
             Console.ResetColor();
             Console.WriteLine();
-            Console.WriteLine($"{visiteurs.GetNbVisiteur(visiteurs)} visiteur(s) présent(s) dans le parc.");
-            Console.WriteLine();
+            Console.WriteLine($"{gestionVisiteurs.GetNbVisiteur(gestionVisiteurs)} visiteur(s) présent(s) dans le parc.\n");
 
+            // --- Détails des attractions ---
             foreach (Attraction attraction in parc.GetAttractions())
             {
                 double fillPercentage = (double)attraction.VisiteursEnligne.Count / attraction.GetCapacity() * 100;
@@ -95,13 +94,8 @@ namespace TP2_Prog3
             }
         }
 
-        /// <summary>
-        /// Affiche l’historique des actions d’un visiteur dans la console.
-        /// </summary>
-        /// <param name="visiteur">Le visiteur dont on veut afficher l’historique.</param>
         public static void AfficherHistoriqueVisiteur(Visiteur visiteur)
         {
-            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"### {visiteur} ###");
 
